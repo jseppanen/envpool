@@ -35,6 +35,7 @@ print(f"8 threads: {run_test(8):.1f} SPS")
 print(f"16 threads: {run_test(16):.1f} SPS")
 print(f"32 threads: {run_test(32):.1f} SPS")
 print(f"64 threads: {run_test(64):.1f} SPS")
+print(f"92 threads: {run_test(92):.1f} SPS")
 print(f"96 threads: {run_test(96):.1f} SPS")
 
 # 1 thread: 17849.3 SPS
