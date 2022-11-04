@@ -94,9 +94,9 @@ class SlowdownEnv : public Env<SlowdownEnvSpec> {
   }
 
   void Step(const Action& action) override {
-    int x = 0;
-    for (int i = 0; i < 1000000; i++) {
-      x += i * x + 1;
+    // https://stackoverflow.com/questions/7083482/how-to-prevent-gcc-from-optimizing-out-a-busy-wait-loop/58758133#58758133
+    for (int i = 0; i < 100000; i++) {
+      __asm__ __volatile__ ("" : "+g" (i) : :);
     }
     WriteState();
   }
